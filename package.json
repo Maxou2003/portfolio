@@ -6,11 +6,19 @@
         "dev": "vite"
     },
     "devDependencies": {
+        "@editorjs/header": "^2.8.8",
+        "@editorjs/list": "^2.0.8",
         "@tailwindcss/vite": "^4.0.0",
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
+        "editorjs-style": "^3.0.3",
         "laravel-vite-plugin": "^1.2.0",
+        "sass": "^1.89.2",
         "tailwindcss": "^4.0.0",
         "vite": "^6.2.4"
+    },
+    "dependencies": {
+        "@editorjs/editorjs": "^2.30.8",
+        "bootstrap": "^5.3.7"
     }
 }

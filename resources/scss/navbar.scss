@@ -1,0 +1,42 @@
+
+nav {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--accent-light);
+}
+
+/* Responsive navbar (mobile simple) */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}

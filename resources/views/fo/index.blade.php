@@ -1,10 +1,7 @@
 @extends('layout')
 @section('title', 'Maxence Martin - Développeur Web')
-@section('includes')
-    <link rel="stylesheet" href="{{ '../resources/css/app.css' }}">
-@endsection
 @section('content')
-    <main>
+    <main id="index_page">
         <section id="about">
             <h2>À propos</h2>
             <p>
