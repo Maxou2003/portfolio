@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+@extends('layouts.base')
+@section('title', $title)
+@section('includes')
     @yield('includes')
-    @vite(['resources/scss/app.scss', 'resources/js/editor-init.js'])
-</head>
+@endsection
 
-<body>
+
+@section('navbar')
     <nav>
         <div class="logo">Maxence<span class="text-secondary">.dev</span></div>
         <ul class="align-items-center">
@@ -21,11 +16,14 @@
                         Créer un folio</button> </a></li>
         </ul>
     </nav>
+@endsection
+@section('content')
+
     @yield('content')
-</body>
+@endsection
 
-<footer>
-    &copy; 2025 Maxence Martin – Tous droits réservés
-</footer>
-
-</html>
+@section('footer')
+    <footer>
+        &copy; 2025 Maxence Martin – Tous droits réservés
+    </footer>
+@endsection

@@ -17,6 +17,17 @@ class FolioController extends Controller
     public function store(Request $request)
     {
 
-        return redirect()->route('folio.create')->with('success', 'Folio created successfully!');
+        $request->validate([
+            'content' => 'required|string',
+        ]);
+
+        $folio = \App\Models\Folio::create([
+            'title' => $request->input('title', 'Nouveau Folio'),
+            'description' => $request->input('description', ''),
+            'content' => $request->input('content'),
+            'user_id' => auth()->id()
+        ]);
+
+        $folio->save();
     }
 }

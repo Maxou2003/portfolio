@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.connected')
 @section('title', 'Maxence Martin - Développeur Web')
 @section('content')
     <main id="index_page">

@@ -18,7 +18,17 @@
         "vite": "^6.2.4"
     },
     "dependencies": {
+        "@editorjs/code": "^2.9.3",
+        "@editorjs/delimiter": "^1.4.2",
         "@editorjs/editorjs": "^2.30.8",
-        "bootstrap": "^5.3.7"
+        "@editorjs/embed": "^2.7.6",
+        "@editorjs/inline-code": "^1.5.2",
+        "@editorjs/marker": "^1.4.0",
+        "@editorjs/paragraph": "^2.11.7",
+        "@editorjs/quote": "^2.7.6",
+        "@editorjs/simple-image": "^1.6.0",
+        "@editorjs/warning": "^1.4.1",
+        "bootstrap": "^5.3.7",
+        "editorjs-button": "^3.0.3"
     }
 }
