@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -26,7 +27,7 @@ class AuthController
             return redirect()->route('home')->with('success', 'Connexion réussie.');
         }
 
-        return back()->with('error', 'Identifiants invalides.' . $credentials['email'] . ' ' . $credentials['password'])
+        return back()->with('error', 'Identifiants invalides.')
             ->withInput($request->only('email'))
             ->withErrors(['email' => 'Identifiants invalides.']);
     }
@@ -49,18 +50,12 @@ class AuthController
         ]);
     }
 
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => bcrypt($request->password),
         ]);
 
         Auth::login($user);

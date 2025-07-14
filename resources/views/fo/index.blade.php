@@ -1,7 +1,7 @@
 @extends('layouts.connected')
 @section('title', 'Maxence Martin - Développeur Web')
 @section('content')
-    <main id="index_page">
+    <main id="index_page" class="container d-flex flex-column justify-content-center col-12 col-md-8 col-lg-6 mt-3">
         <section id="about">
             <h2>À propos</h2>
             <p>
