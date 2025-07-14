@@ -16,16 +16,14 @@ class FolioController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
-            'content' => 'required|string',
+            'content' => 'required|array',
         ]);
 
         $folio = \App\Models\Folio::create([
             'title' => $request->input('title', 'Nouveau Folio'),
-            'description' => $request->input('description', ''),
             'content' => $request->input('content'),
-            'user_id' => auth()->id()
+            'user_id' => auth()->user()->id
         ]);
 
         $folio->save();

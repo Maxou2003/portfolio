@@ -5,8 +5,8 @@
 @endsection
 @section('content')
 
-    <div id="folioFormContainer" class="container mx-auto" style="max-width: 700px;" data-route={{ $route }}
-        data-token="{{ csrf_token() }}">
+    <div id="folioFormContainer" class="container mx-auto" style="max-width: 700px;" data-route="{{ $route }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <div class="justify-content-between d-flex py-3">
             <h1>{{ $title }}</h1>
 

@@ -13,7 +13,7 @@ class AuthController
 {
     public function showLoginForm()
     {
-        return view('fo.auth.form', [
+        return view('fo.auth.login', [
             'title' => 'Connexion - Mon folio builder',
             'route' => route('login.submit'),
         ]);
@@ -44,7 +44,7 @@ class AuthController
 
     public function showRegistrationForm()
     {
-        return view('fo.auth.form', [
+        return view('fo.auth.register', [
             'title' => 'Inscription - Mon folio builder',
             'route' => route('register.submit'),
         ]);
@@ -52,6 +52,7 @@ class AuthController
 
     public function register(RegisterRequest $request)
     {
+        dd($request->all());
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

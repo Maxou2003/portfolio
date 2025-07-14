@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveBtn = document.getElementById('saveBtn');
     const container = document.querySelector('#folioFormContainer');
     const route = container.dataset.route;
-    const token = container.dataset.token;
+    const token = container.querySelector('meta[name="csrf-token"]').content;
+
 
     console.log('Route:', route);
     console.log('Token:', token);
@@ -39,18 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
     saveBtn.addEventListener('click', async () => {
         try {
             const outputData = await editor.save();
+            console.log('Données sauvegardées :', JSON.stringify({ content: outputData }));
+            console.log('Route de sauvegarde :', route);
 
-            // Exemple : envoi en POST via fetch
             const response = await fetch(`${route}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': token
+                    'Accept': 'application/json', // ✅ Ajoute ceci
+                    'X-CSRF-TOKEN': token,
                 },
+                credentials: 'same-origin',
                 body: JSON.stringify({ content: outputData })
             });
 
+
             if (!response.ok) throw new Error('Erreur lors de la sauvegarde');
+            console.log(response);
             alert('Folio sauvegardé avec succès');
         } catch (e) {
             console.error('❌ Erreur :', e);
