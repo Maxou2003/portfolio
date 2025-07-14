@@ -52,7 +52,6 @@ class AuthController
 
     public function register(RegisterRequest $request)
     {
-        dd($request->all());
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
