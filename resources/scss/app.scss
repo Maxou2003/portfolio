@@ -1,9 +1,9 @@
-$primary: #f9322c;
+$primary: #8b5cf6;
 $secondary: #e6edf3;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 :root {
-    --bg-dark: #0d1117;
+    --bg-dark: #0f172a;
     --text-light: #e6edf3;
     --accent: #f9322c;
     --accent-light: #ff5b57;
@@ -33,3 +33,4 @@ footer {
 
 @import "navbar";
 @import "index";
+@import "form-btn";

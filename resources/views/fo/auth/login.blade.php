@@ -5,7 +5,7 @@
     <form method="POST" action="{{ $route }}" class="w-100 px-4" style="max-width: 380px;">
         @csrf
 
-        <h1 class="mb-4 fw-bold text-white text-center">Bienvenue sur <span style="color: #8b5cf6;">Folium</span></h1>
+        <h1 class="mb-4 fw-bold text-white text-center">Bienvenue sur <span class="text-primary">Folium</span></h1>
         <p class="text-white text-center mb-4">Connecte-toi pour accéder à ton espace</p>
 
         <div class="mb-3">
@@ -28,10 +28,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn w-100 rounded-pill py-2 fw-semibold text-white"
-            style="background: linear-gradient(to right, #3b82f6, #8b5cf6); border: none;">
-            Se connecter
-        </button>
+        @include('fo.components.form-btn', ['buttonText' => 'Se connecter'])
 
         <p class="text-center mt-4 small text-white">
             Pas encore de compte ?

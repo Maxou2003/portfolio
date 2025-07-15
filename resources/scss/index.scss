@@ -11,13 +11,13 @@
     }
 
     h2 {
-        color: var(--accent);
+        color: $primary;
         font-size: 1.8rem;
         margin-bottom: 1rem;
     }
 
     p strong {
-        color: var(--accent);
+        color: $primary;
     }
 
     a {

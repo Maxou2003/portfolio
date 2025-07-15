@@ -1,0 +1,8 @@
+button[name="form-btn"] {
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    border: none;
+}
+
+button[name="form-btn"]:hover {
+    transform: scale(1.05);
+}
