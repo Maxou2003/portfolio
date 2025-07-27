@@ -1,14 +1,7 @@
-$primary: #8b5cf6;
-$secondary: #e6edf3;
+@import '_variables';
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-:root {
-    --bg-dark: #0f172a;
-    --text-light: #e6edf3;
-    --accent: #f9322c;
-    --accent-light: #ff5b57;
-    --font-main: 'Segoe UI', sans-serif;
-}
+@import 'themes/_dark-mode';
+@import 'themes/_light-mode';
 
 * {
     box-sizing: border-box;
@@ -16,18 +9,11 @@ $secondary: #e6edf3;
     padding: 0;
 }
 
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    font-family: var(--font-main);
-    line-height: 1.6;
-}
 
 footer {
     text-align: center;
     padding: 2rem 1rem;
-    color: #7f8c8d;
-    border-top: 1px solid #2c2f33;
+    border-top: 2px solid $primary;
     font-size: 0.9rem;
 }
 

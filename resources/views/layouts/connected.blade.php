@@ -15,7 +15,7 @@
 @endsection
 
 @section('footer')
-    <footer>
+    <footer class="py-3 border-top-primary text-center mt-5">
         &copy; 2025 Maxence Martin – Tous droits réservés
     </footer>
 @endsection

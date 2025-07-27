@@ -1,7 +1,7 @@
     <nav>
         <div class="d-flex align-items-center">
             <div class="logo">
-                <a class="text-secondary" href="{{ route('home') }}">Folium</a>
+                <a class="text-primary" href="{{ route('home') }}">Folium</a>
             </div>
             <ul>
                 <li><a href="#about">À propos</a></li>
@@ -18,9 +18,16 @@
                     ])
                 </a>
             </li>
+            <li>
+                @auth
+                    <a href="#" is="theme-toggle" class="ms-auto d-flex align-items-center">
+                        <ion-icon class="fs-4"
+                            name="{{ Auth::user()->dark_mode ? 'sunny-outline' : 'moon-outline' }}"></ion-icon>
+                    </a>
+                @endauth
 
             <li>
-                <a href="{{ route('home') }}" class="d-flex align-items-center">
+                <a href="#" class="d-flex align-items-center">
                     <ion-icon class="fs-4" name="notifications-outline"></ion-icon>
                 </a>
             </li>

@@ -1,0 +1,27 @@
+[data-theme="dark"] {
+    background-color: $dark-bg;
+    color: $dark-text;
+
+    body {
+        background-color: $dark-bg;
+        color: $dark-text;
+    }
+
+    .card,
+    .navbar,
+    .form-control {
+        background-color: $dark-card;
+        color: $dark-text;
+        border-color: lighten($dark-card, 5%);
+    }
+
+    .btn-primary {
+        background-color: $primary-light;
+        border-color: $primary-light;
+        color: black;
+
+        &:hover {
+            background-color: lighten($primary-light, 10%);
+        }
+    }
+}
